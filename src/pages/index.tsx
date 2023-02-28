@@ -9,6 +9,7 @@ import {
 } from '@/components/Icons'
 import RegisterModal from '@/components/RegisterModal'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
@@ -20,6 +21,7 @@ type FormProps = {
 }
 
 export default function Login() {
+  const router = useRouter()
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
 
@@ -42,6 +44,7 @@ export default function Login() {
 
   const onSubmit = useCallback((data: FormProps) => {
     console.log('submit', data)
+    router.push('/home')
   }, [])
 
   return (
