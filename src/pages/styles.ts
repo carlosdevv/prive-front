@@ -47,9 +47,31 @@ export const HeroForm = styled.form`
   width: 100%;
   background: var(--black);
   border-radius: 0.25rem;
-  padding: 4rem 4rem 2rem 4rem;
+  padding: 3rem 4rem 2rem 4rem;
 
   gap: 1rem;
+`
+
+export const UserTypeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  .userType {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary);
+
+    color: var(--text-100);
+
+    span {
+      font-size: 0.85rem;
+    }
+  }
 `
 
 export const ErrorMessage = styled.span`
@@ -187,7 +209,7 @@ export const OptionsLogin = styled.span`
   justify-content: center;
   gap: 1rem;
 
-  margin-top: 1rem;
+  margin-top: 0.35rem;
 `
 
 export const OptionsContainer = styled.button`

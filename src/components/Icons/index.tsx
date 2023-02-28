@@ -4,12 +4,12 @@ import {
   FiLogOut,
   FiHome,
   FiEye,
-  FiEyeOff
+  FiEyeOff,
+  FiX,
+  FiPhone
 } from 'react-icons/fi'
 import { BsGoogle, BsFillPersonFill } from 'react-icons/bs'
-import { BiArrowBack, BiRightArrowAlt } from 'react-icons/bi'
-import { GiSoccerField } from 'react-icons/gi'
-import { RxDotFilled } from 'react-icons/rx'
+import { BiArrowBack, BiRightArrowAlt, BiBuilding } from 'react-icons/bi'
 
 export {
   FiLock,
@@ -19,9 +19,10 @@ export {
   FiLogOut,
   BiArrowBack,
   BiRightArrowAlt,
-  GiSoccerField,
   BsFillPersonFill,
-  RxDotFilled,
   FiEye,
-  FiEyeOff
+  FiEyeOff,
+  FiX,
+  BiBuilding,
+  FiPhone
 }

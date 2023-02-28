@@ -7,6 +7,7 @@ import {
   FiLock,
   FiMail
 } from '@/components/Icons'
+import RegisterModal from '@/components/RegisterModal'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -20,6 +21,7 @@ type FormProps = {
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -36,12 +38,18 @@ export default function Login() {
     resolver: yupResolver(schema)
   })
 
+  const openModal = useCallback(() => setModalIsOpen(true), [])
+
   const onSubmit = useCallback((data: FormProps) => {
     console.log('submit', data)
   }, [])
 
   return (
     <>
+      <RegisterModal
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+      />
       <S.LoginContainer>
         <S.HeroContainer>
           <S.Divider />
@@ -96,11 +104,11 @@ export default function Login() {
             <S.ForgotPassword>Esqueci minha senha</S.ForgotPassword>
             <S.Divider />
             <S.OptionsLogin>
-              <S.OptionsContainer>
+              <S.OptionsContainer type="button">
                 <BsGoogle size={24} />
                 <span>Login Google</span>
               </S.OptionsContainer>
-              <S.OptionsContainer>
+              <S.OptionsContainer type="button" onClick={() => openModal()}>
                 <BsFillPersonFill size={24} />
                 <span>Criar Conta</span>
               </S.OptionsContainer>

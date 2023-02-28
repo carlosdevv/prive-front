@@ -39,11 +39,7 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="pt">
-        <Head>
-          <title>Prive | Admin</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
